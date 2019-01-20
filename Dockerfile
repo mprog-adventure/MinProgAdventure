@@ -8,7 +8,7 @@ RUN mkdir /var/run/sshd
 # Don't need a message of the day
 RUN rm /etc/motd
 
-# Add user mprog with password student
+# Change root password
 RUN echo 'root:student' | chpasswd root
 
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
