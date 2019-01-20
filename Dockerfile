@@ -1,4 +1,4 @@
-# Advised run command: docker run -p 52022:22 -d --rm --name adventure -v data:/app/data adventure
+# Advised run command: docker run -p 52022:22 -d --restart unless-stopped --name adventure -v path/to/data:/app/data adventure
 
 FROM python:3.7
 
@@ -23,7 +23,7 @@ EXPOSE 22
 
 # Add current directory to the app folder
 COPY ./app.py  /app/
-COPY ./classes /app/classes
+COPY ./classes/* /app/classes/
 COPY ./requirements.txt /app/
 
 # Install dependencies
