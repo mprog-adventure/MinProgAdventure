@@ -5,8 +5,10 @@ FROM python:3.7
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 
+# Don't need a message of the day
+RUN rm /etc/motd
+
 # Add user mprog with password student
-RUN useradd -ms /app/adventure.py mprog -p student
 RUN echo 'root:student' | chpasswd root
 
 RUN sed -i '$ a AllowUsers root mprog' /etc/ssh/sshd_config
