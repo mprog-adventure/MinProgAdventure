@@ -11,8 +11,6 @@ RUN rm /etc/motd
 # Add user mprog with password student
 RUN echo 'root:student' | chpasswd root
 
-RUN sed -i '$ a AllowUsers root mprog' /etc/ssh/sshd_config
-
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # SSH login fix. Otherwise user is kicked off after login
