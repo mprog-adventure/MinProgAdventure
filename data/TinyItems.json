@@ -1,0 +1,12 @@
+[
+    {
+        "description": "a set of keys",
+        "location": "3",
+        "name": "keys"
+    },
+    {
+        "description": "a brightly shining brass lamp",
+        "location": "2",
+        "name": "lamp"
+    }
+]

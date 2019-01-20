@@ -1,0 +1,464 @@
+[
+    {
+        "description": "You are standing at the end of a road before a small brick building.  A small stream flows out of the building and down a gully to the south.  A road runs up a small hill to the west.",
+        "id": "1",
+        "name": "Outside building",
+        "routes": "[('WEST', '2'), ('UP', '2'), ('NORTH', '3'), ('IN', '3'), ('SOUTH', '4'), ('DOWN', '4')]"
+    },
+    {
+        "description": "You are at the end of a road at the top of a small hill. You can see a small building in the valley to the east.",
+        "id": "2",
+        "name": "End of road",
+        "routes": "[('EAST', '1'), ('DOWN', '1')]"
+    },
+    {
+        "description": "You are inside a building, a well house for a large spring. The exit door is to the south.  There is another room to the north, but the door is barred by a shimmering curtain.",
+        "id": "3",
+        "name": "Inside building",
+        "routes": "[('SOUTH', '1'), ('OUT', '1'), ('NORTH', '70'), ('XYZZY', '12/LAMP'), ('XYZZY', '10'), ('PLUGH', '48/LAMP'), ('PLUGH', '10')]"
+    },
+    {
+        "description": "You are in a valley in the forest beside a stream tumbling along a rocky bed.  The stream is flowing to the south.",
+        "id": "4",
+        "name": "Valley beside a stream",
+        "routes": "[('NORTH', '1'), ('UP', '1'), ('SOUTH', '5'), ('DOWN', '5')]"
+    },
+    {
+        "description": "At your feet all the water of the stream splashes into a two-inch slit in the rock.  To the south, the streambed is bare rock.",
+        "id": "5",
+        "name": "Slit in rock",
+        "routes": "[('NORTH', '4'), ('UP', '4'), ('SOUTH', '6'), ('DOWN', '6')]"
+    },
+    {
+        "description": "You are in a 20-foot depression floored with bare dirt. Set into the dirt is a strong steel grate mounted in concrete.  A dry streambed leads into the depression from the north.",
+        "id": "6",
+        "name": "Outside grate",
+        "routes": "[('NORTH', '5'), ('UP', '5'), ('DOWN', '8/KEYS'), ('DOWN', '7')]"
+    },
+    {
+        "description": "The grate is locked and you don't have any keys.",
+        "id": "7",
+        "name": "Above locked grate",
+        "routes": "[('FORCED', '6')]"
+    },
+    {
+        "description": "You are in a small chamber beneath a 3x3 steel grate to the surface.  A low crawl over cobbles leads inward to the west.",
+        "id": "8",
+        "name": "Beneath grate",
+        "routes": "[('UP', '6'), ('OUT', '6'), ('IN', '9'), ('WEST', '9')]"
+    },
+    {
+        "description": "You are crawling over cobbles in a low east/west passage. There is a dim light to the east.",
+        "id": "9",
+        "name": "Cobble crawl",
+        "routes": "[('EAST', '8'), ('WEST', '12/LAMP'), ('WEST', '10')]"
+    },
+    {
+        "description": "It is now pitch dark.  If you proceed you will likely fall into a pit.",
+        "id": "10",
+        "name": "Darkness",
+        "routes": "[('EAST', '9'), ('OUT', '9'), ('XYZZY', '3'), ('PLUGH', '3'), ('NORTH', '11'), ('SOUTH', '11'), ('WEST', '11'), ('UP', '11'), ('DOWN', '11')]"
+    },
+    {
+        "description": "You fell into a pit and broke every bone in your body!",
+        "id": "11",
+        "name": "Pit",
+        "routes": "[('FORCED', '0')]"
+    },
+    {
+        "description": "You are in a debris room filled with stuff washed in from the surface.  A low wide passage with cobbles becomes plugged with mud and debris here, but an extremely narrow canyon leads upward and west.  Carved on the wall is the message: \"Magic Word XYZZY\".",
+        "id": "12",
+        "name": "Debris room",
+        "routes": "[('EAST', '9'), ('WEST', '13'), ('UP', '13'), ('XYZZY', '3')]"
+    },
+    {
+        "description": "You are in an awkward sloping east/west canyon.",
+        "id": "13",
+        "name": "Sloping canyon",
+        "routes": "[('EAST', '12'), ('DOWN', '12'), ('WEST', '14/BIRD'), ('WEST', '15/ROD'), ('WEST', '14'), ('UP', '14/BIRD'), ('UP', '15/ROD'), ('UP', '14')]"
+    },
+    {
+        "description": "You are in a splendid chamber thirty feet high.  The walls are frozen rivers of orange stone.  A narrow canyon and a good passage exit from east and west sides of the chamber.",
+        "id": "14",
+        "name": "Chamber of orange stone",
+        "routes": "[('EAST', '13'), ('WEST', '16')]"
+    },
+    {
+        "description": "You are in a splendid chamber thirty feet high.  The walls are frozen rivers of orange stone.  A narrow canyon and a good passage exit from east and west sides of the chamber. High in the cavern, you see a little bird flying around the rocks.  It takes one look at the black rod and quickly flies out of sight.",
+        "id": "15",
+        "name": "Chamber of orange stone",
+        "routes": "[('EAST', '13'), ('WEST', '16')]"
+    },
+    {
+        "description": "At your feet is a small pit breathing traces of white mist. An east passage ends here except for a small crack leading on.  Rough stone steps lead into the pit.",
+        "id": "16",
+        "name": "Top of pit",
+        "routes": "[('EAST', '14/BIRD'), ('EAST', '15/ROD'), ('EAST', '14'), ('WEST', '17'), ('DOWN', '18')]"
+    },
+    {
+        "description": "The crack is far too small for you to follow.",
+        "id": "17",
+        "name": "Narrow crack",
+        "routes": "[('FORCED', '16')]"
+    },
+    {
+        "description": "You are at one end of a vast hall stretching forward out of sight to the west.  The hall is filled with wisps of white mist swaying to and fro almost as if alive.  There are passages to the north and south, and a stone stairway leads upward.",
+        "id": "18",
+        "name": "Hall of mists",
+        "routes": "[('UP', '20/NUGGET'), ('UP', '16'), ('WEST', '21'), ('SOUTH', '19'), ('NORTH', '42/BIRD'), ('NORTH', '40')]"
+    },
+    {
+        "description": "This is a low room with a crude note on the wall.  The note says, \"You won't get it up the steps.\"",
+        "id": "19",
+        "name": "Nugget of gold room",
+        "routes": "[('NORTH', '18'), ('OUT', '18')]"
+    },
+    {
+        "description": "An unseen force blocks your way and a ghostly voice echoes: \"You won't get it up the steps.\"",
+        "id": "20",
+        "name": "Unseen force",
+        "routes": "[('FORCED', '18')]"
+    },
+    {
+        "description": "You are on the east bank of a fissure slicing clear across the hall.  The mist is quite thick here.",
+        "id": "21",
+        "name": "East bank of fissure",
+        "routes": "[('EAST', '18'), ('WAVE', '24/ROD'), ('WAVE', '23'), ('WEST', '22'), ('JUMP', '29')]"
+    },
+    {
+        "description": "The fissure looks too wide to cross.",
+        "id": "22",
+        "name": "Blocked by fissure",
+        "routes": "[('FORCED', '21')]"
+    },
+    {
+        "description": "You don't have the appropriate thing to wave.",
+        "id": "23",
+        "name": "Wave Rod (bug: doesn't check object)",
+        "routes": "[('FORCED', '21')]"
+    },
+    {
+        "description": "As you wave the rod, a cascade of crystalline sparks issues from its tip which gain shape and substance over the chasm. In moments, a shimmering crystal bridge spans the fissure. After you cross, the bridge fades into nothingness.",
+        "id": "24",
+        "name": "Crystal bridge crossing fissure",
+        "routes": "[('FORCED', '25')]"
+    },
+    {
+        "description": "You are on the west side of the fissure in the Hall of Mists.",
+        "id": "25",
+        "name": "West bank of fissure",
+        "routes": "[('WEST', '30'), ('WAVE', '28/ROD'), ('WAVE', '27'), ('EAST', '26'), ('JUMP', '29')]"
+    },
+    {
+        "description": "The fissure looks too wide to cross.",
+        "id": "26",
+        "name": "Blocked by fissure",
+        "routes": "[('FORCED', '25')]"
+    },
+    {
+        "description": "You don't have the appropriate thing to wave.",
+        "id": "27",
+        "name": "Wave Rod (bug: doesn't check object)",
+        "routes": "[('FORCED', '25')]"
+    },
+    {
+        "description": "As you wave the rod, a cascade of crystalline sparks issues from its tip which gain shape and substance over the chasm. In moments, a shimmering crystal bridge spans the fissure. After you cross, the bridge fades into nothingness.",
+        "id": "28",
+        "name": "Crystal bridge crossing fissure",
+        "routes": "[('FORCED', '21')]"
+    },
+    {
+        "description": "You make a mighty leap but fall several feet short of the far side.  You make a few mad scrambles at the air as you fall to your death on the rocks below.",
+        "id": "29",
+        "name": "Fatal jump",
+        "routes": "[('FORCED', '0')]"
+    },
+    {
+        "description": "You are at the west end of Hall of Mists.  A low wide crawl exits north.  To the south is a little passage six feet off the floor that seems to twist sharply.",
+        "id": "30",
+        "name": "West end of the Hall of Mists",
+        "routes": "[('EAST', '25'), ('NORTH', '46'), ('SOUTH', '31')]"
+    },
+    {
+        "description": "You are in a maze of twisty little passages, all alike.",
+        "id": "31",
+        "name": "You are in a maze of twisty little passages, all alike.",
+        "routes": "[('WEST', '30'), ('NORTH', '32'), ('SOUTH', '33')]"
+    },
+    {
+        "description": "You are in a maze of twisty little passages, all alike.",
+        "id": "32",
+        "name": "You are in a maze of twisty little passages, all alike.",
+        "routes": "[('NORTH', '34'), ('EAST', '31'), ('WEST', '35')]"
+    },
+    {
+        "description": "You are in a maze of twisty little passages, all alike.",
+        "id": "33",
+        "name": "You are in a maze of twisty little passages, all alike.",
+        "routes": "[('NORTH', '35'), ('EAST', '36'), ('WEST', '31')]"
+    },
+    {
+        "description": "You are in a maze of twisty little passages, all alike.",
+        "id": "34",
+        "name": "You are in a maze of twisty little passages, all alike.",
+        "routes": "[('SOUTH', '36'), ('WEST', '32'), ('EAST', '39')]"
+    },
+    {
+        "description": "You are in a maze of twisty little passages, all alike.",
+        "id": "35",
+        "name": "You are in a maze of twisty little passages, all alike.",
+        "routes": "[('SOUTH', '32'), ('WEST', '33')]"
+    },
+    {
+        "description": "You are in a maze of twisty little passages, all alike.",
+        "id": "36",
+        "name": "You are in a maze of twisty little passages, all alike.",
+        "routes": "[('EAST', '33'), ('WEST', '34'), ('NORTH', '37')]"
+    },
+    {
+        "description": "You are in a maze of twisty little passages, all alike.",
+        "id": "37",
+        "name": "You are in a maze of twisty little passages, all alike.",
+        "routes": "[('NORTH', '38'), ('SOUTH', '36'), ('WEST', '39')]"
+    },
+    {
+        "description": "You're in the pirate's lair deep in the maze.  The only exit is south.",
+        "id": "38",
+        "name": "Pirate's lair",
+        "routes": "[('SOUTH', '37'), ('OUT', '37')]"
+    },
+    {
+        "description": "You are on the brink of a thirty-foot pit with a massive orange column down one wall.  You could climb down here but you could not get back up.  The maze continues at this level.",
+        "id": "39",
+        "name": "Brink of pit in the maze",
+        "routes": "[('EAST', '37'), ('WEST', '34'), ('DOWN', '14/BIRD'), ('DOWN', '15/ROD'), ('DOWN', '14')]"
+    },
+    {
+        "description": "You are in the Hall of the Mountain King, with passages off in several directions.  A fierce green snake bars your way.",
+        "id": "40",
+        "name": "Hall of the Mountain King",
+        "routes": "[('SOUTH', '18'), ('NORTH', '41'), ('EAST', '41'), ('WEST', '41')]"
+    },
+    {
+        "description": "You can't get by the snake.",
+        "id": "41",
+        "name": "Blocked by snake",
+        "routes": "[('FORCED', '40')]"
+    },
+    {
+        "description": "As you enter the chamber, you see a fierce green snake. Before you can think, the little bird flies from your shoulder, attacks the green snake, and in an astounding flurry drives the snake away.  The bird then flies back.",
+        "id": "42",
+        "name": "Bird attacks snake",
+        "routes": "[('FORCED', '43')]"
+    },
+    {
+        "description": "You are in the Hall of the Mountain King, with passages off in several directions.",
+        "id": "43",
+        "name": "Hall of the Mountain King",
+        "routes": "[('SOUTH', '18'), ('NORTH', '47'), ('WEST', '44'), ('EAST', '45')]"
+    },
+    {
+        "description": "You are in the West Side Chamber of the Hall of the Mountain King.  A passage continues west and up here.",
+        "id": "44",
+        "name": "West side chamber",
+        "routes": "[('EAST', '43'), ('WEST', '46'), ('UP', '46')]"
+    },
+    {
+        "description": "You are in the East Side Chamber of the Hall of the Mountain King.",
+        "id": "45",
+        "name": "East side chamber",
+        "routes": "[('WEST', '43'), ('OUT', '43')]"
+    },
+    {
+        "description": "You are in a long passageway that curves from the east to the south.",
+        "id": "46",
+        "name": "Long curving passage",
+        "routes": "[('EAST', '44'), ('SOUTH', '30')]"
+    },
+    {
+        "description": "You are in a low N/S passage with a hole in the floor.",
+        "id": "47",
+        "name": "Low N/S passage",
+        "routes": "[('NORTH', '48'), ('SOUTH', '43'), ('DOWN', '53')]"
+    },
+    {
+        "description": "You are in a large room, with a passage to the south, a passage to the west, and a wall of broken rock to the east.  There is a large \"Y2\" on a rock in the room's center.  As you enter, a hollow voice says \"PLUGH\".",
+        "id": "48",
+        "name": "You're at \"Y2\"",
+        "routes": "[('SOUTH', '47'), ('PLUGH', '51/NUGGET'), ('PLUGH', '3'), ('EAST', '52'), ('WEST', '49')]"
+    },
+    {
+        "description": "You're at a low window overlooking a huge pit, which extends up out of sight.  A floor is indistinctly visible over 50 feet below.  Traces of white mist cover the floor of the pit, becoming thicker to the left.  Marks in the dust around the window would seem to indicate that someone has been here recently. Directly across the pit from you and 25 feet away there is a similar window in the wall of the pit. You see a shadowy figure in the other window.",
+        "id": "49",
+        "name": "Window on pit",
+        "routes": "[('EAST', '48'), ('OUT', '48'), ('WAVE', '50')]"
+    },
+    {
+        "description": "The figure waves back.  In fact, it seems to be following your actions.",
+        "id": "50",
+        "name": "Figure waves back",
+        "routes": "[('FORCED', '49')]"
+    },
+    {
+        "description": "As you utter the magic word, your surroundings begin to fade in and out.  After a protracted struggle, you hear a hollow voice say, \"It's just too heavy.\"",
+        "id": "51",
+        "name": "Too heavy",
+        "routes": "[('FORCED', '48')]"
+    },
+    {
+        "description": "You wander around in the broken rock but don't find anything interesting.",
+        "id": "52",
+        "name": "Broken rock",
+        "routes": "[('FORCED', '48')]"
+    },
+    {
+        "description": "You are in an E/W passage.  There is a hole in the ceiling above that appears to open into a passage.",
+        "id": "53",
+        "name": "E/W passage",
+        "routes": "[('UP', '47'), ('WEST', '58'), ('EAST', '54')]"
+    },
+    {
+        "description": "You're in a small chamber lit by an eerie green light that seems to emanate from an extremely narrow crack to the north.  A dark corridor leads west.",
+        "id": "54",
+        "name": "Green chamber",
+        "routes": "[('WEST', '53/LAMP'), ('WEST', '57'), ('NORTH', '56/LAMP'), ('NORTH', '56/BIRD'), ('NORTH', '56/NUGGET'), ('NORTH', '56/COINS'), ('NORTH', '55')]"
+    },
+    {
+        "description": "You're in a small chamber whose walls are studded with glowing green gemstones.  A narrow crack leads south.",
+        "id": "55",
+        "name": "Emerald room",
+        "routes": "[('SOUTH', '54'), ('OUT', '54')]"
+    },
+    {
+        "description": "Something you're carrying won't fit through the crack.",
+        "id": "56",
+        "name": "Too narrow for crack",
+        "routes": "[('FORCED', '54')]"
+    },
+    {
+        "description": "It is now pitch dark.  If you proceed you will likely fall into a pit.",
+        "id": "57",
+        "name": "Darkness",
+        "routes": "[('EAST', '54')]"
+    },
+    {
+        "description": "You are at the east end of the Twopit Room.  The floor here is littered with thin rock slabs, which make it easy to descend the pits.  There is a path here bypassing the pits to connect passages from east and west.  There are holes all over, but the only big one is in the roof directly over the west pit where you can't get to it.",
+        "id": "58",
+        "name": "East end of Twopit Room",
+        "routes": "[('EAST', '53'), ('WEST', '59'), ('DOWN', '60')]"
+    },
+    {
+        "description": "You are at the west end of the Twopit Room.  There is a large hole above the pit at this end of the room.",
+        "id": "59",
+        "name": "West end of Twopit Room",
+        "routes": "[('EAST', '58'), ('WEST', '69'), ('DOWN', '61')]"
+    },
+    {
+        "description": "You are at the bottom of the eastern pit in the Twopit Room.",
+        "id": "60",
+        "name": "East pit",
+        "routes": "[('UP', '58')]"
+    },
+    {
+        "description": "You are at the bottom of the western pit in the Twopit Room underneath a large hole in the ceiling.",
+        "id": "61",
+        "name": "West pit",
+        "routes": "[('UP', '59'), ('WATER', '62/PLANT'), ('WATER', '63')]"
+    },
+    {
+        "description": "You can't water the plant after you've picked it.  You might try replanting it.",
+        "id": "62",
+        "name": "Plant is already picked (bug: might be elsewhere)",
+        "routes": "[('FORCED', '61')]"
+    },
+    {
+        "description": "As you water the plant, it bursts into violent growth, quickly filling the entire pit and pushing you upward toward the hole in ceiling.  You scramble for your life and manage to catch hold of the rock and pull yourself to safety.  The plant then shrinks away as quickly as it grew.",
+        "id": "63",
+        "name": "Beanstalk",
+        "routes": "[('FORCED', '64')]"
+    },
+    {
+        "description": "You are in the Giant Room.  The ceiling here is too high up for your lamp to show it.  A cavernous passage leads north.  There is a hole in the floor through which you can see the Twopit room far below.",
+        "id": "64",
+        "name": "Giant room",
+        "routes": "[('NORTH', '66'), ('DOWN', '65')]"
+    },
+    {
+        "description": "Without the plant, it's far too large a drop.",
+        "id": "65",
+        "name": "Too big a drop",
+        "routes": "[('FORCED', '64')]"
+    },
+    {
+        "description": "You are in a magnificent cavern with a rushing stream, which cascades over a sparkling waterfall into a roaring whirlpool that disappears through a hole in the floor. A passage exits to the south.",
+        "id": "66",
+        "name": "Whirlpool",
+        "routes": "[('SOUTH', '64'), ('DOWN', '67'), ('SWIM', '67')]"
+    },
+    {
+        "description": "You are dragged down, down, into the depths of the whirlpool.  Just as you can no longer hold your breath, you are shot out over a waterfall into the shallow end of a large reservoir.  Gasping and sputtering, you crawl weakly towards the shore.",
+        "id": "67",
+        "name": "ThroughWhirlpool",
+        "routes": "[('FORCED', '68')]"
+    },
+    {
+        "description": "You are at the edge of a large underground reservoir. An opaque cloud of white mist fills the room and rises rapidly upward.  The lake is fed by a stream, which tumbles out of a hole in the wall about ten feet overhead and splashes noisily into the water somewhere within the mist.  The only exit is to the south.",
+        "id": "68",
+        "name": "Underground lake",
+        "routes": "[('SOUTH', '69'), ('OUT', '69')]"
+    },
+    {
+        "description": "You are in a circular chamber about 25 feet across.  The floor is covered by white mist seeping in from the north. The walls extend upward for well over 100 feet.  Suspended from some unseen point far above you, an enormous two-sided mirror is hanging parallel to and midway between the canyon walls.  A small window can be seen in the wall some fifty feet up.  The canyon has exits to the north and east.",
+        "id": "69",
+        "name": "Mirror room",
+        "routes": "[('NORTH', '68'), ('EAST', '59')]"
+    },
+    {
+        "description": "A closed curtain. Only passable with the NUGGET.",
+        "id": "70",
+        "name": "Curtain1",
+        "routes": "[('FORCED', '71/NUGGET'), ('FORCED', '76')]"
+    },
+    {
+        "description": "A closed curtain. Only passable with the DIAMOND.",
+        "id": "71",
+        "name": "Curtain2",
+        "routes": "[('FORCED', '72/DIAMOND'), ('FORCED', '76')]"
+    },
+    {
+        "description": "A closed curtain. Only passable with the EMERALD.",
+        "id": "72",
+        "name": "Curtain3",
+        "routes": "[('FORCED', '73/EMERALD'), ('FORCED', '76')]"
+    },
+    {
+        "description": "A closed curtain. Only passable with the EGGS.",
+        "id": "73",
+        "name": "Curtain4",
+        "routes": "[('FORCED', '74/EGGS'), ('FORCED', '76')]"
+    },
+    {
+        "description": "A closed curtain. Only passable with the CHEST.",
+        "id": "74",
+        "name": "Curtain5",
+        "routes": "[('FORCED', '75/CHEST'), ('FORCED', '76')]"
+    },
+    {
+        "description": "A closed curtain. Only passable with the COINS.",
+        "id": "75",
+        "name": "Curtain6",
+        "routes": "[('FORCED', '77/COINS'), ('FORCED', '76')]"
+    },
+    {
+        "description": "You can pass through this curtain only if you're carrying all the treasures.  You don't yet have all six.",
+        "id": "76",
+        "name": "Missing Treasures",
+        "routes": "[('FORCED', '3')]"
+    },
+    {
+        "description": "You have collected all the treasures and are admitted to the Adventurer's Hall of Fame.  Congratulations!",
+        "id": "77",
+        "name": "Victory",
+        "routes": "[('FORCED', '0')]"
+    }
+]

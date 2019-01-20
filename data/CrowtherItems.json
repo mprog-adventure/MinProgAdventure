@@ -1,0 +1,62 @@
+[
+    {
+        "description": "a set of keys",
+        "location": "3",
+        "name": "keys"
+    },
+    {
+        "description": "a brightly shining brass lamp",
+        "location": "8",
+        "name": "lamp"
+    },
+    {
+        "description": "a black rod with a rusty star",
+        "location": "12",
+        "name": "rod"
+    },
+    {
+        "description": "a little bird",
+        "location": "14",
+        "name": "bird"
+    },
+    {
+        "description": "a nugget of gold",
+        "location": "19",
+        "name": "nugget"
+    },
+    {
+        "description": "a sparkling diamond",
+        "location": "25",
+        "name": "diamond"
+    },
+    {
+        "description": "a bag of coins",
+        "location": "45",
+        "name": "coins"
+    },
+    {
+        "description": "an emerald the size of a plover's egg",
+        "location": "55",
+        "name": "emerald"
+    },
+    {
+        "description": "a nest of golden eggs",
+        "location": "64",
+        "name": "eggs"
+    },
+    {
+        "description": "a bottle of water",
+        "location": "3",
+        "name": "water"
+    },
+    {
+        "description": "a small plant murmuring \"Water, water\"",
+        "location": "61",
+        "name": "plant"
+    },
+    {
+        "description": "a pirate chest",
+        "location": "38",
+        "name": "chest"
+    }
+]
