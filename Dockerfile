@@ -13,6 +13,9 @@ RUN echo 'root:student' | chpasswd root
 
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
+# Remove last login message
+RUN sed -i 's/#PrintLastLog yes/PrintLastLog no/' /etc/ssh/sshd_config
+
 # SSH login fix. Otherwise user is kicked off after login
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
@@ -27,9 +30,9 @@ COPY ./classes/* /app/classes/
 COPY ./requirements.txt /app/
 
 # Install dependencies
-RUN pip install --upgrade pip \
-    && pip install -r /app/requirements.txt \
-    && rm -rf ~/.cache/pip
+# RUN pip install --upgrade pip \
+#     && pip install -r /app/requirements.txt \
+#     && rm -rf ~/.cache/pip
 
 RUN chsh -s /app/app.py root
 
