@@ -5,7 +5,7 @@ from .inventory import Inventory
 
 # Import external libraries.
 from collections import defaultdict
-
+import os
 
 class Adventure():
     """
@@ -13,15 +13,16 @@ class Adventure():
     necessary attributes and methods to setup and play
     Crowther's text based RPG Adventure.
     """
-    def __init__(self, game):
+    def __init__(self, app_path):
         """
         Create rooms and items for the appropriate 'game' version.
         """
-        self.rooms = self.load_rooms(f"/app/data/{game}Rooms.txt")
-        self.items = self.load_items(f"/app/data/{game}Items.txt")
+        DATAFOLDER = os.path.join(app_path, "data")
+        self.rooms = self.load_rooms(f"{DATAFOLDER}/rooms")
+        self.items = self.load_items(f"{DATAFOLDER}/items")
         self.current_room = self.rooms[1]
         self.items = Inventory()
-        self.synonyms = self.load_synonyms("/app/data/SmallSynonyms.txt")
+        self.synonyms = self.load_synonyms(f"{DATAFOLDER}/SmallSynonyms.txt")
 
     def load_synonyms(self, filename):
         with open(filename, "r") as f:
@@ -32,24 +33,27 @@ class Adventure():
 
         return synonyms
 
-    def load_rooms(self, filename):
+    def load_rooms(self, folder):
         """
         Load rooms from filename.
         Returns a collection of Room objects.
         """
-        rooms = [Room(0, "Game over", "Game over", {})]
-        rooms += self.construct_rooms(filename)
+        rooms = {}
+        for file in os.listdir(folder):
+            key, value = self.construct_room(os.path.join(folder, file))
+            rooms[key] = value
         self.update_rooms(rooms)
-
         return rooms
 
-    def load_items(self, filename):
+    def load_items(self, folder):
         """
         Load rooms from filename.
         Returns a collection of Room objects.
         """
-        items = self.construct_items(filename)
-
+        items = {}
+        for file in os.listdir(folder):
+            key, value = self.construct_items(os.path.join(folder, file))
+            items[key] = value
         return items
 
     def read_file(self, filename):
@@ -66,25 +70,22 @@ class Adventure():
             yield lines
 
     def construct_items(self, filename):
-        items = []
+        name = filename.split("/")[-1].split(".")[0]
         for lines in self.read_file(filename):
-            name = lines[0].lower()
-            description = lines[1]
-            location = int(lines[2])
+            description = lines[0]
+            location = int(lines[1])
 
             item = Item(name, description)
             self.rooms[location].add(item)
-            items.append(item)
 
-        return items
+        return name, item
 
-    def construct_rooms(self, filename):
-        rooms = []
+    def construct_room(self, filename):
+        id = int(filename.split("/")[-1].split(".")[0])
         for lines in self.read_file(filename):
-            id = lines[0]
-            name = lines[1]
-            description = lines[2]
-            routes = lines[3:]
+            name = lines[0]
+            description = lines[1]
+            routes = lines[2:]
             connections = defaultdict(list)
 
             # Setup routes from room and split for conditional moves.
@@ -94,15 +95,13 @@ class Adventure():
                 key, value = route.lower().split()
                 connections[key.lower()].append(tuple(value.split("/")))
 
-            rooms.append(Room(id, name, description, connections))
-
-        return rooms
+        return (id, Room(id, name, description, connections))
 
     def update_rooms(self, rooms):
         """
         Replaces room_ids in room connection dicts for actual room objects.
         """
-        for room in rooms:
+        for id, room in rooms.items():
             for direction, connections in room.connections.items():
                 values = []
                 for connection in connections:
