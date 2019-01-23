@@ -110,7 +110,6 @@ class Adventure():
                          "Under Construction - go back using the id of the " +
                          "room you came from.", {})
         for id, room in rooms.items():
-            rooms[-1].connections[id] = (room, None)
             for direction, connections in room.connections.items():
                 values = []
                 for connection in connections:
@@ -123,6 +122,7 @@ class Adventure():
                     else:
                         values.append((rooms[-1], None))
                 room.connections[direction] = values
+                rooms[-1].connections[id] = (room, None)
 
     def game_over(self):
         """
