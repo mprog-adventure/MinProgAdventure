@@ -106,8 +106,11 @@ class Adventure():
         """
         Replaces room_ids in room connection dicts for actual room objects.
         """
-        rooms[-1] = Room(-1, "Unfinished Room", "Under Construction", {'forced': [(0, None)]})
+        rooms[-1] = Room(-1, "Unfinished Room",
+                         "Under Construction - go back using the id of the " +
+                         "room you came from.", {})
         for id, room in rooms.items():
+            rooms[-1].connections[id] = (room, None)
             for direction, connections in room.connections.items():
                 values = []
                 for connection in connections:
