@@ -54,8 +54,10 @@ class Adventure():
         Returns a collection of Room objects.
         """
         items = {}
-        for file in os.listdir(folder):
-            key, value = self.construct_items(os.path.join(folder, file))
+        for file_name in os.listdir(folder):
+            if file_name[0] in ['.']:
+                continue
+            key, value = self.construct_items(os.path.join(folder, file_name))
             items[key] = value
         return items
 
