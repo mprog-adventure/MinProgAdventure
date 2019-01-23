@@ -7,6 +7,7 @@ from .inventory import Inventory
 from collections import defaultdict
 import os
 
+
 class Adventure():
     """
     This is your Adventure game class. It should contains
@@ -39,8 +40,10 @@ class Adventure():
         Returns a collection of Room objects.
         """
         rooms = {}
-        for file in os.listdir(folder):
-            key, value = self.construct_room(os.path.join(folder, file))
+        for file_name in os.listdir(folder):
+            if file_name[0] in ['.']:
+                continue
+            key, value = self.construct_room(os.path.join(folder, file_name))
             rooms[key] = value
         self.update_rooms(rooms)
         return rooms
