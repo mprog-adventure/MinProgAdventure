@@ -122,7 +122,8 @@ class Adventure():
                     else:
                         values.append((rooms[-1], None))
                 room.connections[direction] = values
-                rooms[-1].connections[id] = (room, None)
+        for id, room in rooms.items():
+            rooms[-1].connections[str(id)] = [(room, None)]
 
     def game_over(self):
         """
