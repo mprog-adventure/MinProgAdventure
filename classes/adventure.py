@@ -109,7 +109,7 @@ class Adventure():
             for direction, connections in room.connections.items():
                 values = []
                 for connection in connections:
-                    if room.get(int(connection[0])):
+                    if rooms.get(int(connection[0])):
                         if len(connection) == 2:
                             values.append((rooms[int(connection[0])],
                                           connection[1]))
