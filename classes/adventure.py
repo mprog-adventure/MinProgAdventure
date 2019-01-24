@@ -122,6 +122,8 @@ class Adventure():
                                             "sending you back.",
                                             {'forced': [(room, None)]}), None))
                 room.connections[direction] = values
+        for id, room in rooms.items():
+            rooms[-1].connections[str(id)] = [(room, None)]
 
 
     def game_over(self):
