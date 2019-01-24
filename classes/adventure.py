@@ -90,7 +90,7 @@ class Adventure():
         for lines in self.read_file(filename):
             name = lines[0]
             description = lines[1]
-            routes = lines[2:]
+            routes = lines[3:]
             connections = defaultdict(list)
 
             # Setup routes from room and split for conditional moves.
