@@ -97,6 +97,8 @@ class Adventure():
             for route in routes:
                 if route == "-----":
                     continue
+                if route == "":
+                    continue
                 key, value = route.lower().split()
                 connections[key.lower()].append(tuple(value.split("/")))
 
