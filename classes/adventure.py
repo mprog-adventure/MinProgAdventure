@@ -203,8 +203,7 @@ class Adventure():
         """
         Play an Adventure game
         """
-        print(f"Welcome, to the Adventure games.\n"
-              "May the randomly generated numbers be ever in your favour.\n")
+        print(f"\nWelcome, to Minor Programmeren: The Adventure.\n")
 
         self.display_current_room()
 
