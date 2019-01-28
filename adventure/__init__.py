@@ -8,11 +8,11 @@ from collections import defaultdict
 import os
 
 
-class Adventure():
+class Adventure:
     """
-    This is your Adventure game class. It should contains
+    This is your adventure game class. It should contains
     necessary attributes and methods to setup and play
-    Crowther's text based RPG Adventure.
+    Crowther's text based RPG adventure.
     """
     def __init__(self, app_path):
         """
@@ -25,7 +25,8 @@ class Adventure():
         self.items = Inventory()
         self.synonyms = self.load_synonyms(f"{DATAFOLDER}/SmallSynonyms.txt")
 
-    def load_synonyms(self, filename):
+    @staticmethod
+    def load_synonyms(filename):
         with open(filename, "r") as f:
             synonyms = {}
             for line in f:
@@ -61,7 +62,8 @@ class Adventure():
             items[key] = value
         return items
 
-    def read_file(self, filename):
+    @staticmethod
+    def read_file(filename):
         with open(filename, "r") as f:
             lines = []
             for line in f:
@@ -126,7 +128,6 @@ class Adventure():
                 room.connections[direction] = values
         for id, room in rooms.items():
             rooms[-1].connections[str(id)] = [(room, None)]
-
 
     def game_over(self):
         """
@@ -203,9 +204,9 @@ class Adventure():
 
     def play(self):
         """
-        Play an Adventure game
+        Play an adventure game
         """
-        print(f"\nWelcome, to Minor Programmeren: The Adventure.\n")
+        print(f"\nWelcome, to Minor Programmeren: The adventure.\n")
 
         self.display_current_room()
 

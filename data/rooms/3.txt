@@ -1,6 +1,0 @@
-Inside building
-You are inside a building, a well house for a large spring.
------
-SOUTH     1
-OUT       1
-DOWN      4

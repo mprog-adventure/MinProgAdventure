@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-from classes.adventure import Adventure
+from adventure import Adventure
 import os
 
 if __name__ == "__main__":

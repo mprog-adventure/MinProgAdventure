@@ -1,0 +1,8 @@
+version: '3'
+services:
+  adventure:
+    build: .
+    ports:
+      - "52022:22"
+    volumes:
+      - ../gamedata:/app/data

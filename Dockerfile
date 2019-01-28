@@ -26,7 +26,7 @@ EXPOSE 22
 
 # Add current directory to the app folder
 COPY ./app.py  /app/
-COPY ./classes/* /app/classes/
+COPY adventure /app/adventure
 COPY ./requirements.txt /app/
 
 # Install dependencies
