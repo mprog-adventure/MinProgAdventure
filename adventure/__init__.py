@@ -162,6 +162,14 @@ class Adventure:
     def look(self):
         print(self.current_room.display())
 
+    def hacker(self):
+        print("Sicke hacker!")
+        for key, value in self.current_room.connections.items():
+            connections = self.current_room.connected(key)
+            for connection in connections:
+                print(f"{key.upper()} leads to: {connection[0].id}: " +
+                      f"{connection[0].name} using item: {connection[1]}")
+
     def inventory(self):
         print(self.items)
 
@@ -219,7 +227,7 @@ class Adventure:
                 self.move(command)
                 self.display_current_room()
 
-            elif command in ["help", "look", "quit", "inventory"]:
+            elif command in ["help", "look", "quit", "inventory", "hacker"]:
                 getattr(self, command)()
 
             elif command in ["take", "drop"]:
