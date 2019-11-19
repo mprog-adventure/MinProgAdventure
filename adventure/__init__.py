@@ -42,10 +42,14 @@ class Adventure:
         """
         rooms = {}
         for file_name in os.listdir(folder):
-            if file_name[0] in ['.']:
-                continue
-            key, value = self.construct_room(os.path.join(folder, file_name))
-            rooms[key] = value
+            try:
+                if file_name[0] in ['.']:
+                    continue
+                key, value = self.construct_room(os.path.join(folder, file_name))
+                rooms[key] = value
+            except:
+                raise Exception(f"Error in room: {file_name}")
+
         self.update_rooms(rooms)
         return rooms
 
